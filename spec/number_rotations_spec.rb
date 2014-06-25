@@ -30,10 +30,22 @@ describe NumberRotation do
 	expected = 321
 	expect(actual).to eq(expected)
  end
- it 'four different digits numbers returns reverse_number number' do
+ it 'four different digits numbers returns reverse number' do
  	rotation = NumberRotation.new
 	actual = rotation.reverse_number(1234)
 	expected = 4321
+	expect(actual).to eq(expected)
+ end
+ it 'rotating right returns a number starting on the second digit, then the rest of the number, then the first digit' do
+	rotation = NumberRotation.new
+	actual = rotation.rotate_right(12345)
+	expected = 23451
+	expect(actual).to eq(expected)
+ end
+ it 'rotating left returns a number with last digit first then the rest of the number' do
+	rotation = NumberRotation.new
+	actual = rotation.rotate_left(12345)
+	expected = 51234
 	expect(actual).to eq(expected)
  end
  
