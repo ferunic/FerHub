@@ -11,14 +11,12 @@ class NumberRotation
 		end
 		return x
 	end
-	def rotate_left(x)
-		digits = x.to_s.scan(/./)
-		rx = ""
-		rx << digits[digits.size - 1]
-		for i in 0..(digits.size - 2)
-			rx << digits[i]
+	def rotate_left(x, pos = 1)
+		while pos >= 1
+			x = move_digit_left(x)	
+			pos-=1
 		end
-		return rx.to_i
+		return x
 	end
 	private 
 	def move_digit_right(x)
@@ -28,6 +26,15 @@ class NumberRotation
 			rx << digits[i]
 		end
 		rx << digits[0]
+		return rx.to_i
+	end
+	def move_digit_left(x)
+		digits = x.to_s.scan(/./)
+		rx = ""
+		rx << digits[digits.size - 1]
+		for i in 0..(digits.size - 2)
+			rx << digits[i]
+		end
 		return rx.to_i
 	end
 end

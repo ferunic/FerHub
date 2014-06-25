@@ -55,6 +55,13 @@ describe NumberRotation do
 	expected= 45123
 	expect(actual).to eq(expected)
  end
+ it 'rotating left n digits returns 
+		number starting on last - n to last digit, then the rest of the number' do
+	rotation = NumberRotation.new
+	actual = rotation.rotate_left(12345,3)
+	expected= 34512
+	expect(actual).to eq(expected)
+ end
  
  
  end
