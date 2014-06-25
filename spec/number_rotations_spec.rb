@@ -48,5 +48,13 @@ describe NumberRotation do
 	expected = 51234
 	expect(actual).to eq(expected)
  end
+ it 'rotating right n digits returns 
+		number starting on n + 1, then the rest of the number, then n' do
+	rotation = NumberRotation.new
+	actual = rotation.rotate_right(12345,3)
+	expected= 45123
+	expect(actual).to eq(expected)
+ end
+ 
  
  end
