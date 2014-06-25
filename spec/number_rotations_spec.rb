@@ -1,9 +1,40 @@
 require 'number_rotation'
 describe NumberRotation do
-  it 'one digit numbers returns same number' do
+ it 'one digit numbers returns same number' do
     rotation = NumberRotation.new
-    actual = rotation.rotate(1)
+    actual = rotation.reverse_number(1)
     expected = 1
     expect(actual).to eq(expected)
-  end
+ end
+ it 'two different digits numbers returns switched digits on number' do
+	rotation = NumberRotation.new
+	actual = rotation.reverse_number(12)
+	expected = 21
+	expect(actual).to eq(expected)
+ end
+ it 'two (same)digits numbers returns same number' do
+ 	rotation = NumberRotation.new
+	actual = rotation.reverse_number(33)
+	expected = 33
+	expect(actual).to eq(expected)
+ end
+ it 'three (same)digits numbers returns same number' do
+ 	rotation = NumberRotation.new
+	actual = rotation.reverse_number(333)
+	expected = 333
+	expect(actual).to eq(expected)
+ end
+ it 'three different digits numbers returns first and last switched' do
+ 	rotation = NumberRotation.new
+	actual = rotation.reverse_number(123)
+	expected = 321
+	expect(actual).to eq(expected)
+ end
+ it 'four different digits numbers returns reverse_number number' do
+ 	rotation = NumberRotation.new
+	actual = rotation.reverse_number(1234)
+	expected = 4321
+	expect(actual).to eq(expected)
+ end
+ 
  end
